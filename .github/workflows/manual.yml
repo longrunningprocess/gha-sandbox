@@ -1,0 +1,14 @@
+name: Manual run Demo
+on:
+  workflow_dispatch:
+    inputs:
+      whom:
+        description: Whom to greet
+        required: true
+        default: "World"
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello ${{ github.event.inputs.whom }}"
