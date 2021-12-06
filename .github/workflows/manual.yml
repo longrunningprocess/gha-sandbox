@@ -5,7 +5,6 @@ on:
       whom:
         description: Whom to greet
         required: true
-        default: "World"
 
 jobs:
   say_hello:
