@@ -6,9 +6,20 @@ on:
       whom:
         description: Whom to greet
         required: true
+      emote:
+        description: Emotion toward meeting "whom"
+        default: 'nice'
+        required: true
+      tense:
+        description: Tense of greeting
+        required: false
+        type: choice
+        options:
+          - 'is'
+          - 'was'
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello ${{ github.event.inputs.whom }}"
+      - run: echo "Hello ${{ github.event.inputs.whom }}, it ${{ github.event.inputs.tense }} ${{ github.event.inputs.emote }} to meet you."
