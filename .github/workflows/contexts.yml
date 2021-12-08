@@ -1,5 +1,8 @@
 name: Available contexts
 
+env:
+  WF_ENV: 'workflow env var'
+
 on:
   push:
 
@@ -7,6 +10,9 @@ jobs:
   # https://docs.github.com/en/actions/learn-github-actions/contexts
   contexts:
     runs-on: ubuntu-latest
+    env:
+      J_ENV: 'job env var'
+
     steps:
       -
         name: github
@@ -14,6 +20,8 @@ jobs:
       -
         name: env
         run: echo "${{ toJSON(env) }}"
+        env:
+          S_ENV: 'step env var'
       -
         name: job
         run: echo "${{ toJSON(job) }}"
