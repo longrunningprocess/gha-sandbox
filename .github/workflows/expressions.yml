@@ -1,6 +1,8 @@
 name: Expression Demo
 
-on: [push, workflow_dispatch]
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
   # https://docs.github.com/en/actions/learn-github-actions/expressions

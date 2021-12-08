@@ -25,5 +25,7 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello ${{ github.event.inputs.whom }}, it ${{ github.event.inputs.tense }} ${{ github.event.inputs.emote }} to meet you."
-      - run: echo "Truthfully? [${{ github.event.inputs.truth }}]"
+      -
+        run: echo "Hello ${{ github.event.inputs.whom }}, it ${{ github.event.inputs.tense }} ${{ github.event.inputs.emote }} to meet you."
+      -
+        run: echo "Truthfully? [${{ github.event.inputs.truth }}]"
