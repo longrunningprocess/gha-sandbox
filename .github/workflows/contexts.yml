@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       J_ENV: 'job env var'
-    outputs:
-      output1: ${{ steps.step1.outputs.test }}
 
     steps:
       -
@@ -28,9 +26,11 @@ jobs:
         name: job
         run: echo "${{ toJSON(job) }}"
       -
+        name: step output
+        run: echo "::set-output name=test::hello"
+      -
         name: steps
-        id: step1
-        run: echo "${{ toJSON(steps) }} ::set-output name=test::hello"
+        run: echo "${{ toJSON(steps) }}"
       -
         name: runner
         run: echo "${{ toJSON(runner) }}"
