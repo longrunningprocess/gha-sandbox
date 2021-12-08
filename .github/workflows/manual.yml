@@ -19,11 +19,11 @@ on:
       truth:
         description: I mean it
         type: boolean
-        required: true
+        default: true
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello ${{ github.event.inputs.whom }}, it ${{ github.event.inputs.tense }} ${{ github.event.inputs.emote }} to meet you."
-      - run: echo "environment type is ${{ github.event.inputs.reason }}."
+      - run: echo "Truthfully? [${{ github.event.inputs.truth }}]"
