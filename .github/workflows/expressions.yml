@@ -7,7 +7,7 @@ jobs:
     steps:
       -
         name: contains
-        run: "contains('Hello world', 'llo') => " ${{ contains('Hello world', 'llo')}}
+        run: echo "contains('Hello world', 'llo') => " ${{ contains('Hello world', 'llo')}}
       # -
       #   name: Check out repository code
       #   uses: actions/checkout@v2
