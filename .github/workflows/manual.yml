@@ -12,14 +12,17 @@ on:
         required: true
       tense:
         description: Tense of greeting
-        required: false
         type: choice
         options:
           - 'is'
           - 'was'
+      reason:
+        description: Reason for the emotion
+        type: environment
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello ${{ github.event.inputs.whom }}, it ${{ github.event.inputs.tense }} ${{ github.event.inputs.emote }} to meet you."
+      - run: echo "environment type is ${{ github.event.inputs.reason }}."
