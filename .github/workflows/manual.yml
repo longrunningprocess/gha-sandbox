@@ -16,9 +16,10 @@ on:
         options:
           - 'is'
           - 'was'
-      reason:
-        description: Reason for the emotion
-        type: environment
+      truth:
+        description: I mean it
+        type: boolean
+        required: true
 
 jobs:
   say_hello:
