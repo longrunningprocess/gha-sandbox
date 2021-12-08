@@ -1,0 +1,12 @@
+name: Available contexts
+
+on:
+  push:
+
+jobs:
+  # https://docs.github.com/en/actions/learn-github-actions/expressions
+  contexts:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        run: echo ${{ github }}
