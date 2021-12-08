@@ -27,6 +27,7 @@ jobs:
         run: echo "${{ toJSON(job) }}"
       -
         name: steps
+        id: step1
         run: echo "${{ toJSON(steps) }} ::set-output name=test::hello"
       -
         name: runner
