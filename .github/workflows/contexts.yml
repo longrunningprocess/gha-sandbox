@@ -25,8 +25,6 @@ jobs:
       -
         name: job
         run: echo "${{ toJSON(job) }}"
-        outputs:
-          ouput1: 'output1'
       -
         name: steps
         run: echo "${{ toJSON(steps) }}"
