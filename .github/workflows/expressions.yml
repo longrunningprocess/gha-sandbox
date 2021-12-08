@@ -1,4 +1,4 @@
-name: Expression Demo
+name: Using expressions
 
 on:
   push:

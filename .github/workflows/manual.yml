@@ -1,4 +1,5 @@
-name: Manual run Demo
+name: Running a workflow manually
+
 on:
   workflow_dispatch:
     inputs:
