@@ -1,0 +1,16 @@
+name: Expression Demo
+on: [push]
+jobs:
+  # https://docs.github.com/en/actions/learn-github-actions/expressions
+  explore-expressions:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: contains
+        run: echo contains('Hello world', 'llo') => ${{ contains('Hello world', 'llo')}}
+      # -
+      #   name: Check out repository code
+      #   uses: actions/checkout@v2
+      # -
+      #   name:
+      #   run:
