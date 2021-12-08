@@ -1,5 +1,7 @@
 name: Expression Demo
-on: [push]
+
+on: [push, workflow_dispatch]
+
 jobs:
   # https://docs.github.com/en/actions/learn-github-actions/expressions
   explore-expressions:
@@ -8,9 +10,8 @@ jobs:
       -
         name: contains
         run: echo "contains('Hello world', 'llo') => " ${{ contains('Hello world', 'llo')}}
-      # -
-      #   name: Check out repository code
-      #   uses: actions/checkout@v2
-      # -
-      #   name:
-      #   run:
+      -
+        name: Check out repository code
+        uses: actions/checkout@v2
+      -
+        run: echo ${{ hashFiles('**/expressions.yml')}}
