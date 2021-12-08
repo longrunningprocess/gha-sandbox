@@ -4,9 +4,34 @@ on:
   push:
 
 jobs:
-  # https://docs.github.com/en/actions/learn-github-actions/expressions
+  # https://docs.github.com/en/actions/learn-github-actions/contexts
   contexts:
     runs-on: ubuntu-latest
     steps:
       -
+        name: github
         run: echo "${{ toJSON(github) }}"
+      -
+        name: env
+        run: echo "${{ toJSON(env) }}"
+      -
+        name: job
+        run: echo "${{ toJSON(job) }}"
+      -
+        name: steps
+        run: echo "${{ toJSON(steps) }}"
+      -
+        name: runner
+        run: echo "${{ toJSON(runner) }}"
+      -
+        name: secrets
+        run: echo "${{ toJSON(secrets) }}"
+      -
+        name: strategy
+        run: echo "${{ toJSON(strategy) }}"
+      -
+        name: needs
+        run: echo "${{ toJSON(needs) }}"
+      -
+        name: inputs
+        run: echo "${{ toJSON(inputs) }}"
