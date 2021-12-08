@@ -26,9 +26,6 @@ jobs:
         name: job
         run: echo "${{ toJSON(job) }}"
       -
-        name: step output
-        run: echo "::set-output name=test::hello"
-      -
         name: steps
         run: echo "${{ toJSON(steps) }}"
       -
