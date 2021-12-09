@@ -6,7 +6,7 @@ on:
 
 jobs:
   # https://docs.github.com/en/actions/learn-github-actions/workflow-commands-for-github-actions#using-workflow-commands-to-access-toolkit-functions
-  between-steps-via-input-output:
+  between-steps-via-output:
     runs-on: ubuntu-latest
     steps:
       -
@@ -21,11 +21,14 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      EPOCH: ${{ steps.vars.outputs.EPOCH }}
+      EPOCH: ${{ steps.vars.outputs.EPOCH_IN_STEP }}
+
     steps:
       -
         id: vars
-        run: echo ::set-output name=EPOCH::$(date +%s)
+        run: echo ::set-output name=EPOCH_IN_STEP::$(date +%s)
+      -
+        run: echo "The previous step ran at ${{ steps.vars.outputs.EPOCH_IN_STEP }};  it is now $(date +%s)"
 
   between-jobs-consume-output:
     runs-on: ubuntu-latest
