@@ -10,11 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        id: get-epoch
-        run: |
-          echo ::set-output name=EPOCH::$(date +%s)
+        id: vars
+        run: ::set-output name=EPOCH::$(date +%s)
       -
-        run: echo "The previous step ran at ${{ steps.get-epoch.outputs.EPOCH }};  it is now $(date +%s)"
+        run: echo "The previous step ran at ${{ steps.vars.outputs.EPOCH }};  it is now $(date +%s)"
   # between-jobs:
   #   runs-on: ubuntu-latest
   #   steps:
