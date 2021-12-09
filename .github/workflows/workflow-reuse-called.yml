@@ -15,4 +15,4 @@ jobs:
 
     steps:
       -
-        run: echo I got your message => ${{ inputs.message }} <=
+        run: echo I got your message « ${{ inputs.message }} »
