@@ -11,7 +11,9 @@ jobs:
     steps:
       -
         id: get-epoch
-        run: echo '::set-output name=EPOCH::${{ date +%s }}'
+        run: |
+          export EPOCH=$(date +%s)
+          echo '::set-output name=EPOCH::$EPOCH'
       -
         run: echo "The previous step ran at ${{ steps.get-epoch.outputs.EPOCH }};  it is now $(date +%s)"
   # between-jobs:
