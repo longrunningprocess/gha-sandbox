@@ -12,7 +12,7 @@ jobs:
       -
         id: get-epoch
         run: |
-          echo '::set-output name=EPOCH::$(echo date +%s)'
+          echo ::set-output name=EPOCH::$(date +%s)
       -
         run: echo "The previous step ran at ${{ steps.get-epoch.outputs.EPOCH }};  it is now $(date +%s)"
   # between-jobs:
