@@ -50,6 +50,7 @@ jobs:
       -
         run: cat build-time.txt
       -
+        # https://docs.github.com/en/actions/advanced-guides/storing-workflow-data-as-artifacts
         uses: actions/upload-artifact@v2
         with:
           name: build-time-file
