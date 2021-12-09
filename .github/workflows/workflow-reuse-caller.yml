@@ -1,0 +1,10 @@
+#https://docs.github.com/en/actions/learn-github-actions/reusing-workflows#overview
+name: Workflow reuse (caller)
+
+on: workflow_dispatch
+
+jobs:
+  call-the-called:
+    uses: longrunningprocess/gha-sandbox/.github/workflows/workflow-reuse-called.yml
+    with:
+      message: "Hello from the caller"

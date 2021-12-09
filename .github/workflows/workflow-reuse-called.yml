@@ -1,0 +1,20 @@
+#https://docs.github.com/en/actions/learn-github-actions/reusing-workflows#overview
+name: Workflow reuse (called)
+
+on:
+  workflow_call:
+    # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#onworkflow_callinputs
+    inputs:
+      message:
+        type: string
+        required: true
+
+jobs:
+  use-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        uses: ./.github/actions/my-action@v1
+        with:
+          message: ${{ inputs.message }}
