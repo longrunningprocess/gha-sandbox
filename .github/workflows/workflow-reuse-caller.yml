@@ -5,6 +5,7 @@ on: workflow_dispatch
 
 jobs:
   call-the-called:
-    uses: longrunningprocess/gha-sandbox/.github/workflows/workflow-reuse-called.yml@v1
+    # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_iduses
+    uses: longrunningprocess/gha-sandbox/.github/workflows/workflow-reuse-called.yml@main
     with:
       message: "Hello from the caller"
