@@ -16,10 +16,24 @@ jobs:
         run: sleep 2
       -
         run: echo "The previous step ran at ${{ steps.vars.outputs.EPOCH }};  it is now $(date +%s)"
-  # between-jobs:
-  #   runs-on: ubuntu-latest
-  #   steps:
+  # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idoutputs
+  between-jobs-generate-output:
+    runs-on: ubuntu-latest
+
+    outputs:
+      EPOCH: ${{ steps.vars.outputs.EPOCH }}
+    steps:
+      -
+        id: vars
+        run: echo ::set-output name=EPOCH::$(date +%s)
+
+  between-jobs-consume-output:
+    runs-on: ubuntu-latest
+    needs: between-jobs-generate-output
+    steps:
+      -
+        run: echo "The previous job ran at ${{ needs.between-jobs-generate-output.outputs.EPOCH }};  it is now $(date +%s)"
+
   # TODO: artifacts between jobs (https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#sharing-data-between-jobs)
-  # TODO: input-output between jobs (https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idoutputs)
   # TODO: ref to docs
   # TODO: use `needs` between jobs
