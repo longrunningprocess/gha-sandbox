@@ -11,7 +11,9 @@ jobs:
     steps:
       -
         id: vars
-        run: ::set-output name=EPOCH::$(date +%s)
+        run: echo ::set-output name=EPOCH::$(date +%s)
+      -
+        run: sleep 2
       -
         run: echo "The previous step ran at ${{ steps.vars.outputs.EPOCH }};  it is now $(date +%s)"
   # between-jobs:
