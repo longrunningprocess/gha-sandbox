@@ -46,7 +46,7 @@ jobs:
 
     steps:
       -
-        run: echo $date +%s > build-time.txt
+        run: echo $(date +%s) > build-time.txt
       -
         run: cat build-time.txt
       -
