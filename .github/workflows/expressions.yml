@@ -17,3 +17,5 @@ jobs:
         uses: actions/checkout@v2
       -
         run: echo ${{ hashFiles('**/expressions.yml')}}
+      -
+        run: echo "Today is $(date +%Y%m%d)"
