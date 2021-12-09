@@ -15,6 +15,4 @@ jobs:
 
     steps:
       -
-        run: echo '{{ message }}'
-        with:
-          message: ${{ inputs.message }}
+        run: echo ${{ inputs.message }}
