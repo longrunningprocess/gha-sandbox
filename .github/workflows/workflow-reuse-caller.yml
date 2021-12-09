@@ -1,11 +1,16 @@
 #https://docs.github.com/en/actions/learn-github-actions/reusing-workflows#overview
 name: Workflow reuse (caller)
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+      inputs:
+        message:
+          description: Message to be sent
+          required: true
 
 jobs:
   call-the-called:
     # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_iduses
     uses: longrunningprocess/gha-sandbox/.github/workflows/workflow-reuse-called.yml@main
     with:
-      message: "Hello from the caller"
+      message: ${{ github.event.inputs.message }}
