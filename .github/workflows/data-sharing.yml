@@ -16,6 +16,7 @@ jobs:
         run: sleep 2
       -
         run: echo "The previous step ran at ${{ steps.vars.outputs.EPOCH }};  it is now $(date +%s)"
+
   # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idoutputs
   between-jobs-generate-output:
     runs-on: ubuntu-latest
@@ -32,11 +33,41 @@ jobs:
 
   between-jobs-consume-output:
     runs-on: ubuntu-latest
+
     needs: between-jobs-generate-output
+
     steps:
       -
         run: echo "The previous job ran at ${{ needs.between-jobs-generate-output.outputs.EPOCH }};  it is now $(date +%s)"
 
-  # TODO: artifacts between jobs (https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#sharing-data-between-jobs)
-  # TODO: ref to docs
-  # TODO: use `needs` between jobs
+  # https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#sharing-data-between-jobs)
+  between-jobs-generate-artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        run: echo $date +%s > build-time.txt
+      -
+        run: cat build-time.txt
+      -
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-time-file
+          path: build-time.txt
+
+  between-jobs-consume-artifact:
+    runs-on: ubuntu-latest
+
+    needs: between-jobs-generate-artifact
+
+    steps:
+      -
+        run: ls -l
+      -
+        uses: actions/download-artifact@v2
+        with:
+          name: build-time-file
+      -
+        run: ls -l
+      -
+        run: cat build-time.txt
