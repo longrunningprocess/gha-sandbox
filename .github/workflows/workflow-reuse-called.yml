@@ -15,6 +15,6 @@ jobs:
 
     steps:
       -
-        uses: ./.github/actions/my-action@v1
+        run: echo '{{ message }}'
         with:
           message: ${{ inputs.message }}
