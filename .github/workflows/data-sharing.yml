@@ -1,0 +1,23 @@
+name: Data sharing
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  # https://docs.github.com/en/actions/learn-github-actions/workflow-commands-for-github-actions#using-workflow-commands-to-access-toolkit-functions
+  between-steps-via-input-output:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        id: get-epoch
+        run: echo '::set-output name=EPOCH::$(date +%s)'
+      -
+        run: echo "The previous step ran at ${{ steps.get-epoch.outputs.EPOCH }};  it is now $(date +%s)"
+  # between-jobs:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  # TODO: artifacts between jobs (https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#sharing-data-between-jobs)
+  # TODO: input-output between jobs (https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idoutputs)
+  # TODO: ref to docs
+  # TODO: use `needs` between jobs
