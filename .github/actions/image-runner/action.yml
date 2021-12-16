@@ -17,4 +17,5 @@ runs:
       with:
         name:  ${{ inputs.artifact-id }}
     -
+      shell: bash
       run: ls -l
