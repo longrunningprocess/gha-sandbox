@@ -22,5 +22,9 @@ jobs:
         run: gzip build-time-capturer.tar
       -
         run: ls -l
-        # upload artifact
+      -
+        uses: actions/artifact@v2
+        with:
+          name: build-time-capturer.tar.gz
+          path: build-time-capturer.tar.gz
         # run custom action passing in artifact id
