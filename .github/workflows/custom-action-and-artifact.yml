@@ -23,7 +23,7 @@ jobs:
       -
         run: ls -l
       -
-        uses: actions/artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: build-time-capturer.tar.gz
           path: build-time-capturer.tar.gz
