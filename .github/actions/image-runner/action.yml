@@ -1,0 +1,20 @@
+# https://docs.github.com/en/actions/creating-actions
+name:  Image runner
+description:  Expects a gzipped artifact of a docker image that will be run as-is.
+
+inputs:
+  artifact-id:
+    description:  The ID of the artifact to be downloaded
+    required: true
+
+runs:
+  # https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
+  using: composite
+
+  steps:
+    -
+      uses: actions/download-artifact@v2
+      with:
+        name:  ${{ inputs.artifact-id }}
+    -
+      run: ls -l

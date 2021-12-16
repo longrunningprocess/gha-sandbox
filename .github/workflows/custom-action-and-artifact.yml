@@ -27,4 +27,7 @@ jobs:
         with:
           name: build-time-capturer.tar.gz
           path: build-time-capturer.tar.gz
-        # run custom action passing in artifact id
+      -
+        uses: ./.github/actions/image-runner
+        with:
+          artifact-id: build-time-capturer.tar.gz
