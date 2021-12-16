@@ -17,6 +17,6 @@ jobs:
       -
         run: docker save build-time-capturer > build-time-capturer.tar
       -
-        run: ls -l
+        run: gzip --version
         # upload artifact
         # run custom action passing in artifact id
