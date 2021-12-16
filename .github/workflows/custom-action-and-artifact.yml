@@ -1,4 +1,4 @@
-name: Build and artifact and utilize a custom action
+name: Build an artifact and utilize a custom action
 
 on:
   workflow_dispatch:
