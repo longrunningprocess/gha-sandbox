@@ -4,7 +4,7 @@ description:  Expects a docker image that will be run as-is.
 
 inputs:
   artifact-id:
-    description:  The ID of the artifact to be downloaded
+    description:  The ID of the artifact to be downloaded, this action assumes this will be the name of image, e.g., build-time-capturer.tar.gz
     required: true
 
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-actions
