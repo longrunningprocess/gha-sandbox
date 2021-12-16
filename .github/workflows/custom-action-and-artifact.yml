@@ -1,0 +1,19 @@
+name: Build and artifact and utilize a custom action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        uses: actions/checkout@v2
+      -
+        run: docker build -t build-time-capturer src
+      -
+        run: docker run build-time-capturer
+        # docker save it
+        # upload artifact
+        # run custom action passing in artifact id
