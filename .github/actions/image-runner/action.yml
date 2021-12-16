@@ -28,5 +28,5 @@ runs:
       run: docker image ls
     -
       shell: bash
-      run: docker run --rm $(echo ${{ inputs.artifact-id }} | sed 's/.tar[.gz]//')
+      run: docker run --rm $(echo ${{ inputs.artifact-id }} | cut -d '.' -f1)
 
