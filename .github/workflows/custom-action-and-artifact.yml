@@ -14,6 +14,9 @@ jobs:
         run: docker build -t build-time-capturer src
       -
         run: docker run build-time-capturer
-        # docker save it
+      -
+        run: docker save build-time-capturer
+      -
+        run: ls -l
         # upload artifact
         # run custom action passing in artifact id
