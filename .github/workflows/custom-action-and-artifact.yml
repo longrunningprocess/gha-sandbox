@@ -15,7 +15,7 @@ jobs:
       -
         run: docker run build-time-capturer
       -
-        run: docker save build-time-capturer
+        run: docker save build-time-capturer > build-time-capturer.tar
       -
         run: ls -l
         # upload artifact
