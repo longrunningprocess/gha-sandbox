@@ -1,6 +1,6 @@
 # https://docs.github.com/en/actions/creating-actions
 name:  Image runner
-description:  Expects a gzipped artifact of a docker image that will be run as-is.
+description:  Expects a docker image that will be run as-is.
 
 inputs:
   artifact-id:
@@ -26,4 +26,7 @@ runs:
     -
       shell: bash
       run: docker image ls
+    -
+      shell: bash
+      run: docker run --rm $(echo ${{ inputs.artifact-id }} | sed 's/.tar[.gz]//')
 
