@@ -1,0 +1,26 @@
+name: Can't "AND" events
+description: If a situation were needed where a workflow should only run when a tag has been pushed on the main branch...
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  main-only:
+    if: github.event.base_ref == 'refs/heads/main'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        name: 🎉
+        run: echo "'Smiling is my favorite.'  – Buddy"
+
+  any:
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        name: 🎉
+        run: echo "I'm wide open to running any tag.  – This job"
