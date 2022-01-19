@@ -1,5 +1,5 @@
 name: Can't "AND" events
-description: If a situation were needed where a workflow should only run when a tag has been pushed on the main branch...
+# If a situation were needed where a workflow should only run when a tag has been pushed on the main branch...
 
 on:
   push:
