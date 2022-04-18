@@ -43,9 +43,3 @@ jobs:
       -
         name: inputs
         run: echo "${{ toJSON(inputs) }}"
-      -
-        name: docker versions
-        run: |
-          docker --version
-          docker-compose --version
-          docker compose version

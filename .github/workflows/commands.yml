@@ -1,0 +1,24 @@
+name: Available commands
+
+on:
+  push:
+
+jobs:
+  commands:
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        name: built-ins
+        run: ls -l /usr/bin
+      -
+        name: node versions
+        run: |
+          node --version
+          npm --version
+      -
+        name: docker versions
+        run: |
+          docker --version
+          docker-compose --version
+          docker compose version
