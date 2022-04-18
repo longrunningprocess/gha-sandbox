@@ -1,4 +1,4 @@
-from alpine
+FROM alpine
 
 RUN echo "built at: $(date +%s)" > built_at
 
