@@ -5,6 +5,7 @@ env:
 
 on:
   push:
+  workflow_dispatch:
 
 jobs:
   # https://docs.github.com/en/actions/learn-github-actions/contexts
