@@ -23,7 +23,7 @@ jobs:
         name: python version
         run: python -V
       -
-        run: ./accessdatabaseengine.exe /quiet
+        run: ./officesetup.exe /quiet
       -
         name: install pyodbc
         run: pip install pyodbc
