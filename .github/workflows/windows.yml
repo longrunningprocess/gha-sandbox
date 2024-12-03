@@ -14,3 +14,6 @@ jobs:
       -
         name: Current dir
         run: dir
+      -
+        name: python version
+        run: python -V
