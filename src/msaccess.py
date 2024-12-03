@@ -1,3 +1,4 @@
 import pyodbc
 
-[x for x in pyodbc.drivers() if x.startswith('Microsoft Access Driver')]
+for driver in [x for x in pyodbc.drivers() if x.startswith('Microsoft Access Driver')]:
+	print(driver)
