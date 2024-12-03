@@ -10,5 +10,7 @@ jobs:
 
     steps:
       -
+        uses: actions/checkout@v4
+      -
         name: Current dir
-        run: Get-ChildItem
+        run: dir
