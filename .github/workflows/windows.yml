@@ -7,7 +7,7 @@ on:
 jobs:
   check :
     # https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md
-    runs-on: windows-2019
+    runs-on: windows-latest
 
     steps:
       -
@@ -15,6 +15,10 @@ jobs:
       -
         name: Current dir
         run: dir
+        # "C:\Program Files\Git\bin\git.exe"
+      -
+        name: Program Files dir
+        run: dir "C:\Program Files"
       -
         # https://docs.python.org/3/using/cmdline.html#generic-options
         name: python version
