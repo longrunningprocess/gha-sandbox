@@ -5,10 +5,10 @@ on:
     branches: 'windows-access-db'
 
 jobs:
-  commands:
+  info:
     runs-on: windows-latest
 
     steps:
       -
         name: Current dir
-        run: dir
+        run: ls -l
