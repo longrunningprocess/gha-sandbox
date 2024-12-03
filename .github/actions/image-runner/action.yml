@@ -14,7 +14,7 @@ runs:
 
   steps:
     -
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name:  ${{ inputs.artifact-id }}
     -
@@ -29,4 +29,3 @@ runs:
     -
       shell: bash
       run: docker run --rm $(echo ${{ inputs.artifact-id }} | cut -d '.' -f1)
-
