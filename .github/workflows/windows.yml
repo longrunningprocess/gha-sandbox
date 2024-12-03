@@ -5,7 +5,7 @@ on:
     branches: 'windows-access-db'
 
 jobs:
-  context:
+  check :
     # https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md
     runs-on: windows-latest
 
