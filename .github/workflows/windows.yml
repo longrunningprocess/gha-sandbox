@@ -6,6 +6,7 @@ on:
 
 jobs:
   context:
+    # https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md
     runs-on: windows-latest
 
     steps:
