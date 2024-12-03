@@ -1,0 +1,14 @@
+name: Windows runner
+
+on:
+  push:
+    branches: 'windows-access-db'
+
+jobs:
+  commands:
+    runs-on: windows-latest
+
+    steps:
+      -
+        name: Current dir
+        run: dir
