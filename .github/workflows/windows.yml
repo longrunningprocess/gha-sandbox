@@ -19,9 +19,5 @@ jobs:
         name: python version
         run: python -V
       -
-        # https://docs.python.org/3/using/cmdline.html#generic-options
-        name: python version
-        run: python -V
-      -
         name: execute script
-        run: python src/play.py
+        run: python src/msaccess.py
