@@ -26,7 +26,7 @@ jobs:
         name: install pyodbc
         run: pip install pyodbc
       -
+        run: "Get-OdbcDriver | Where-Object { $_.Name -like '*Access*' }"
+      -
         name: execute script
         run: python src/msaccess.py
-      -
-        run: "Get-OdbcDriver | Where-Object { $_.Name -like '*Access*' }"
