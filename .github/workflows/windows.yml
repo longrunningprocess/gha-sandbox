@@ -7,7 +7,7 @@ on:
 jobs:
   check :
     # https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md
-    runs-on: windows-latest
+    runs-on: windows-2019
 
     steps:
       -
