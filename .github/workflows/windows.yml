@@ -5,7 +5,7 @@ on:
     branches: 'windows-access-db'
 
 jobs:
-  init:
+  context:
     runs-on: windows-latest
 
     steps:
@@ -18,6 +18,9 @@ jobs:
         # https://docs.python.org/3/using/cmdline.html#generic-options
         name: python version
         run: python -V
+      -
+        name: install pyodbc
+        run: pip install pyodbc
       -
         name: execute script
         run: python src/msaccess.py
