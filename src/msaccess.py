@@ -7,7 +7,7 @@ print("JET drivers found: " + ", ".join(access_jet_drivers))
 
 conn_str = (
     r'DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};'
-    r'DBQ=D:\srcempty.mdb;'
+    r'DBQ=D:\a\gha-sandbox\gha-sandbox\src\empty.mdb;'
     )
 cnxn = pyodbc.connect(conn_str)
 crsr = cnxn.cursor()
