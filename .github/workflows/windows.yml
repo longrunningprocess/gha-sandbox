@@ -15,7 +15,6 @@ jobs:
       -
         name: Current dir
         run: dir
-        # "C:\Program Files\Git\bin\git.exe"
       -
         name: Program Files dir
         run: dir "C:\Program Files"
