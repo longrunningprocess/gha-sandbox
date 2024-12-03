@@ -5,7 +5,7 @@ on:
     branches: 'windows-access-db'
 
 jobs:
-  info:
+  init:
     runs-on: windows-latest
 
     steps:
@@ -15,5 +15,13 @@ jobs:
         name: Current dir
         run: dir
       -
+        # https://docs.python.org/3/using/cmdline.html#generic-options
         name: python version
         run: python -V
+      -
+        # https://docs.python.org/3/using/cmdline.html#generic-options
+        name: python version
+        run: python -V
+      -
+        name: execute script
+        run: python src/play.py
