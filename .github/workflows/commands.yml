@@ -20,5 +20,4 @@ jobs:
         name: docker versions
         run: |
           docker --version
-          docker-compose --version
           docker compose version
