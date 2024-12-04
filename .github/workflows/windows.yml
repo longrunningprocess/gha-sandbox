@@ -16,6 +16,9 @@ jobs:
         name: Current dir
         run: dir
       -
+        name: Runner dir for this project
+        run: dir "D:\"
+      -
         name: Program Files dir
         run: dir "C:\Program Files"
       -
@@ -23,12 +26,12 @@ jobs:
         name: python version
         run: python -V
       -
-        run: ./officesetup.exe /quiet
-      -
         name: install pyodbc
         run: pip install pyodbc
       -
         run: "Get-OdbcDriver | Where-Object { $_.Name -like '*Access*' }"
       -
-        name: execute script
-        run: python src/msaccess.py
+        run: docker pull mcr.microsoft.com/windows:ltsc2019
+      # -
+      #   name: execute script
+      #   run: python src/msaccess.py
