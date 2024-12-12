@@ -30,8 +30,8 @@ jobs:
         run: pip install pyodbc
       -
         run: "Get-OdbcDriver | Where-Object { $_.Name -like '*Access*' }"
-      -
-        run: docker pull mcr.microsoft.com/windows:ltsc2019
+      # -
+      #   run: docker pull mcr.microsoft.com/windows:ltsc2019
       # -
       #   name: execute script
       #   run: python src/msaccess.py
