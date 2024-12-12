@@ -1,0 +1,36 @@
+name: Windows runner
+
+on:
+  push:
+
+jobs:
+  check :
+    # https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md
+    runs-on: windows-latest
+
+    steps:
+      -
+        uses: actions/checkout@v4
+      -
+        name: Current dir
+        run: dir
+      -
+        name: Runner dir for this project
+        run: dir "D:\"
+      -
+        name: Program Files dir
+        run: dir "C:\Program Files"
+      -
+        # https://docs.python.org/3/using/cmdline.html#generic-options
+        name: python version
+        run: python -V
+      -
+        name: install pyodbc
+        run: pip install pyodbc
+      -
+        run: "Get-OdbcDriver | Where-Object { $_.Name -like '*Access*' }"
+      # -
+      #   run: docker pull mcr.microsoft.com/windows:ltsc2019
+      # -
+      #   name: execute script
+      #   run: python src/msaccess.py
